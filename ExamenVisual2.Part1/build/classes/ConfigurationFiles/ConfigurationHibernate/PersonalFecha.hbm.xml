@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="BaseDatos.POJOS.PersonalFecha" table="personalfecha">
+    <id name="idfecha" type="int">
+      <column name="idfecha"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="fecha" type="date">
+      <column name="fecha" not-null="true"/>
+    </property>
+    <set cascade="all" name="perfechahora" table="perfechahora">
+      <key column="IdFecha"/>
+      <many-to-many class="BaseDatos.POJOS.PersonalFechaHora" column="idhora"/>
+    </set>
+  </class>
+</hibernate-mapping>

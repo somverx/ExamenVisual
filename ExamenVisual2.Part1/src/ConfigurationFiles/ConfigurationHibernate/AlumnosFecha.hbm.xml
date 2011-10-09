@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/10/2011 08:20:42 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="sistema_seguridad" name="BaseDatos.POJOS.AlumnosFecha" table="alumnosfecha">
+    <id name="IdFecha" type="int">
+      <column name="IdFecha"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="fecha" type="date">
+      <column length="10" name="fecha" not-null="true"/>
+    </property>
+    <set cascade="all" name="alumnfechahora" table="alumnfechahora">
+      <key column="IdFecha"/>
+      <many-to-many class="BaseDatos.POJOS.AlumnosFechaHora" column="IdHora"/>
+    </set>
+  </class>
+</hibernate-mapping>

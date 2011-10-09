@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="BaseDatos.POJOS.PersonalFechaHora" table="personalfechahora">
+    <id name="idhora" type="int">
+      <column name="idhora"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="hora" type="time">
+      <column length="8" name="hora" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>

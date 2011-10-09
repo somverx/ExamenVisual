@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class catalog="sistema_seguridad" name="BaseDatos.POJOS.Personal" table="personal">
+    <id name="id" type="int">
+      <column name="Id"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nombre" type="string">
+      <column length="40" name="Nombre" not-null="true"/>
+    </property>
+    <property name="estatus" type="char">
+      <column length="1" name="Estatus" not-null="true"/>
+    </property>
+    <property name="departamento" type="string">
+      <column length="20" name="Departamento" not-null="true"/>
+    </property>
+    <property name="direccion" type="string">
+      <column length="50" name="Direccion" not-null="true"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="10" name="Telefono"/>
+    </property>
+    <property name="foto" type="string">
+      <column length="30" name="Foto" not-null="true"/>
+    </property>
+    <property name="dentro" type="boolean">
+      <column name="Dentro" not-null="true"/>
+    </property>
+    <set cascade="all" name="perfecha" table="persfecha">
+      <key column="id"/>
+      <many-to-many class="BaseDatos.POJOS.PersonalFecha" column="idfecha"/>
+    </set>
+  </class>
+</hibernate-mapping>

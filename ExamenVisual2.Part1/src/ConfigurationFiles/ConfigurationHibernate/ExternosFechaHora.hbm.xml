@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/10/2011 08:20:42 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="sistema_seguridad" name="BaseDatos.POJOS.ExternosFechaHora" table="externosfechahora">
+    <id name="IdHora" type="int">
+      <column name="IdHora"/>
+      <generator class="native"/>
+    </id>
+    <property name="hora" type="time">
+      <column length="8" name="hora" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
